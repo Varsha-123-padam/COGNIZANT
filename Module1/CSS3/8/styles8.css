@@ -1,0 +1,69 @@
+:\Users\DELL\OneDrive\Desktop\Module1\CSS3\8\styles8.css
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Event Card styling */
+.eventCard {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    /* Box shadow for depth */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.eventCard h2 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.eventCard button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Visibility examples */
+.hidden {
+    visibility: hidden; /* Takes up space but invisible */
+}
+
+.none {
+    display: none; /* Removed from layout */
+}
+
+/* Form styling */
+.contact-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Input focus outline */
+input:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}

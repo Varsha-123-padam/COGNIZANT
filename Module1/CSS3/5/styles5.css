@@ -1,0 +1,54 @@
+/* Base Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-style: italic;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* Event Section */
+.event-highlight {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.event-date {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.event-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 2rem;
+}

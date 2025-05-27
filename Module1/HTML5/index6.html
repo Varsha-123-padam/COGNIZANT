@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo Video</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .video-player {
+            width: 100%;
+            max-width: 640px;
+            margin: 20px 0;
+        }
+        #videoStatus {
+            color: #28a745;
+            margin: 10px 0;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Promo Video</h1>
+        
+        <video class="video-player"
+               controls
+               oncanplay="showReadyMessage()"
+               poster="video-thumbnail.jpg">
+            <source src="promo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div id="videoStatus"></div>
+
+        <form id="interestForm">
+            <h3>Interested in attending?</h3>
+            <input type="text" placeholder="Enter your email" required>
+            <button type="submit">Send me details</button>
+        </form>
+    </div>
+
+    <script>
+        function showReadyMessage() {
+            const status = document.getElementById('videoStatus');
+            status.style.display = 'block';
+            status.textContent = 'Video ready to play!';
+        }
+
+        window.onbeforeunload = function(e) {
+            const form = document.getElementById('interestForm');
+            if (form.querySelector('input').value) {
+                return 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Background image with fallback color */
+    background: #f0f2f5 url('city-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333333;
+}
+
+/* Header styles with gradient */
+header {
+    background: linear-gradient(to right, #1a237e, #0d47a1);
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Section styles */
+section {
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headers with different gradients */
+.announcements h2 {
+    background: linear-gradient(45deg, #00796b, #009688);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+.services h2 {
+    background: linear-gradient(45deg, #c62828, #d32f2f);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+/* Text styles */
+p {
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}

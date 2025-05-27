@@ -1,0 +1,37 @@
+:\Users\DELL\OneDrive\Desktop\Module1\CSS3\9\styles9.css
+/* Container styles */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Multi-column layout */
+.news-section {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Typography within columns */
+.news-section h2 {
+    column-span: all;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2196f3;
+}
+
+.news-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}

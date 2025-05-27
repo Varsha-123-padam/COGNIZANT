@@ -1,0 +1,78 @@
+:\Users\DELL\OneDrive\Desktop\Module1\Bootstrap5\5\index5.2.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Reordering - Exercise 5.2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .content-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .order-info {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Column Reordering Demo</h2>
+        <p class="lead">Columns reorder on medium screens and above</p>
+
+        <div class="row">
+            <!-- First column - appears second on md screens -->
+            <div class="col-12 col-md-6 order-md-2">
+                <div class="content-box bg-primary text-white">
+                    <h3>First Column</h3>
+                    <p>This appears second on medium screens</p>
+                    <div class="order-info">order-md-2</div>
+                </div>
+            </div>
+
+            <!-- Second column - appears first on md screens -->
+            <div class="col-12 col-md-6 order-md-1">
+                <div class="content-box bg-success text-white">
+                    <h3>Second Column</h3>
+                    <p>This appears first on medium screens</p>
+                    <div class="order-info">order-md-1</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional example with three columns -->
+        <div class="row mt-4">
+            <div class="col-12 col-md-4 order-md-3">
+                <div class="content-box">
+                    <h4>Column A</h4>
+                    <p>Appears last on medium screens</p>
+                    <div class="order-info">order-md-3</div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 order-md-1">
+                <div class="content-box">
+                    <h4>Column B</h4>
+                    <p>Appears first on medium screens</p>
+                    <div class="order-info">order-md-1</div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 order-md-2">
+                <div class="content-box">
+                    <h4>Column C</h4>
+                    <p>Appears second on medium screens</p>
+                    <div class="order-info">order-md-2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Directory Structure Demo</title>
+
+  <!-- CSS: Load Bootstrap styles from the css folder -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- ICONS: Load Bootstrap Icons from the icons folder -->
+  <link rel="stylesheet" href="icons/bootstrap-icons.css">
+
+  <style>
+    body {
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-primary">Exploring Bootstrap Folder Structure</h1>
+    <p class="lead">This page demonstrates the use of Bootstrap's <strong>CSS</strong>, <strong>JS</strong>, and <strong>Icons</strong>.</p>
+
+    <!-- Bootstrap Button with Icon -->
+    <button class="btn btn-success">
+      <i class="bi bi-check-circle-fill"></i> Success Button
+    </button>
+
+    <!-- Alert using Bootstrap classes -->
+    <div class="alert alert-info mt-3" role="alert">
+      <i class="bi bi-info-circle-fill"></i> This is an informational alert!
+    </div>
+
+    <!-- Collapse Component (requires Bootstrap JS) -->
+    <p>
+      <a class="btn btn-primary mt-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Toggle Content
+      </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        This content is shown or hidden using Bootstrap JavaScript.
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: Load Bootstrap JavaScript (includes Popper) -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

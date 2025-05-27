@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Registration Form</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .debug-panel {
+            background: #f8f9fa;
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+        }
+        #debugOutput {
+            font-family: monospace;
+            white-space: pre;
+            padding: 10px;
+            background: #000;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event">Event:</label>
+                <select id="event" name="event" required>
+                    <option value="">Select an event...</option>
+                    <option value="workshop">Technical Workshop</option>
+                    <option value="conference">Web Conference</option>
+                </select>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="debug-panel">
+            <h3>Debug Output</h3>
+            <div id="debugOutput"></div>
+        </div>
+    </div>
+
+    <script src="script13.js"></script>
+</body>
+</html>

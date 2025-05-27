@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Events</title>
+    <style>
+        .event-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 4px;
+        }
+        .filters {
+            margin: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+        .registered {
+            background-color: #e8f5e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search events...">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="workshop">Workshops</option>
+            <option value="seminar">Seminars</option>
+            <option value="conference">Conferences</option>
+        </select>
+    </div>
+    <div id="eventList"></div>
+    <script src="script8.js"></script>
+</body>
+</html>

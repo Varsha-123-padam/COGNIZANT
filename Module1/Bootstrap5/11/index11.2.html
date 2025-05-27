@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Media Objects - Exercise 11.2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Media Object -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex">
+                    <img src="https://via.placeholder.com/64" class="me-3 rounded" alt="User Avatar">
+                    <div>
+                        <h5 class="mt-0">Media heading</h5>
+                        <p>This is some sample content that goes with the media object.</p>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-sm btn-primary me-2">Reply</button>
+                            <small class="text-muted">Posted 3 hours ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nested Media Objects -->
+        <div class="card">
+            <div class="card-body">
+                <!-- Parent Comment -->
+                <div class="d-flex mb-4">
+                    <img src="https://via.placeholder.com/64" class="me-3 rounded" alt="User Avatar">
+                    <div>
+                        <h5 class="mt-0">Parent Comment</h5>
+                        <p>This is a parent comment in the discussion.</p>
+
+                        <!-- Nested Reply -->
+                        <div class="d-flex mt-3">
+                            <img src="https://via.placeholder.com/48" class="me-3 rounded" alt="User Avatar">
+                            <div>
+                                <h6 class="mt-0">Nested Reply</h6>
+                                <p>This is a nested reply to the parent comment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

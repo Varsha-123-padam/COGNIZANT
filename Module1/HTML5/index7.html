@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Preferences</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Preferences</h2>
+        
+        <div class="form-group">
+            <label for="eventType">Preferred Event Type:</label>
+            <select id="eventType" onchange="savePreference()">
+                <option value="">Select an event type</option>
+                <option value="workshop">Workshop</option>
+                <option value="conference">Conference</option>
+                <option value="seminar">Seminar</option>
+                <option value="webinar">Webinar</option>
+            </select>
+        </div>
+
+        <button onclick="clearPreferences()">Clear Preferences</button>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        // Load saved preference on page load
+        window.onload = function() {
+            const savedType = localStorage.getItem('preferredEventType');
+            if (savedType) {
+                document.getElementById('eventType').value = savedType;
+                showStatus('Preferences loaded', 'green');
+            }
+        };
+
+        function savePreference() {
+            const eventType = document.getElementById('eventType').value;
+            if (eventType) {
+                localStorage.setItem('preferredEventType', eventType);
+                sessionStorage.setItem('lastSession', new Date().toISOString());
+                showStatus('Preference saved', 'green');
+            }
+        }
+
+        function clearPreferences() {
+            localStorage.clear();
+            sessionStorage.clear();
+            document.getElementById('eventType').value = '';
+            showStatus('All preferences cleared', 'blue');
+        }
+
+        function showStatus(message, color) {
+            const status = document.getElementById('status');
+            status.style.display = 'block';
+            status.style.backgroundColor = color === 'green' ? '#e8f5e9' : '#e3f2fd';
+            status.style.color = color === 'green' ? '#2e7d32' : '#1565c0';
+            status.textContent = message;
+        }
+    </script>
+</body>
+</html>

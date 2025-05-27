@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Demo</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles1.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Body styles */
+        body {
+            background-color: #e8f5e9;  /* Changed to light green */
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Inline CSS -->
+        <h2 style="color: red;">Event Dashboard</h2>
+        
+        <!-- Rest of the content uses external CSS -->
+        <div class="card">
+            <h3>Upcoming Event</h3>
+            <p>Count: <span id="eventCount">0</span></p>
+            <button onclick="incrementCount()">Add Event</button>
+        </div>
+
+        <div class="card">
+            <h3>Debug Info</h3>
+            <p class="highlight">Check console for logs</p>
+        </div>
+    </div>
+
+    <!-- ...existing script code... -->
+</body>
+</html>

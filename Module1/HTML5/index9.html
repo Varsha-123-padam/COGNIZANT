@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Demo</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Body styles */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .card {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .highlight {
+            color: #2196f3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Inline CSS -->
+        <h2 style="color: red;">Event Dashboard</h2>
+        
+        <!-- Rest of the content uses external CSS -->
+        <div class="card">
+            <h3>Upcoming Event</h3>
+            <p>Count: <span id="eventCount">0</span></p>
+            <button onclick="incrementCount()">Add Event</button>
+        </div>
+
+        <div class="card">
+            <h3>Debug Info</h3>
+            <p class="highlight">Check console for logs</p>
+        </div>
+    </div>
+
+    <script>
+        // Add console log for debugging
+        console.log('Script loaded');
+
+        let count = 0;
+        
+        function incrementCount() {
+            // Add breakpoint here to inspect count
+            debugger;
+            
+            count++;
+            console.log('Count updated:', count);
+            
+            const countElement = document.getElementById('eventCount');
+            countElement.textContent = count;
+            
+            // Intentional error for demonstration
+            if (count === 5) {
+                undefinedFunction();
+            }
+        }
+
+        // Log when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded');
+        });
+    </script>
+</body>
+</html>

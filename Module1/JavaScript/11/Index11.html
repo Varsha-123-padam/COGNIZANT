@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        .form-group.has-error input {
+            border-color: red;
+        }
+        .success-message {
+            color: green;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="event">Select Event:</label>
+            <select id="event" name="event" required>
+                <option value="">Choose an event...</option>
+                <option value="workshop">Tech Workshop</option>
+                <option value="conference">Web Conference</option>
+                <option value="seminar">AI Seminar</option>
+            </select>
+            <div class="error" id="eventError"></div>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="successMessage" class="success-message">
+        Registration successful!
+    </div>
+
+    <script src="script11.js"></script>
+</body>
+</html>

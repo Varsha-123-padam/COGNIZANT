@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .event-image {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .event-image.enlarged {
+            transform: scale(1.5);
+        }
+        #charCount {
+            color: #666;
+            font-size: 0.8em;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Feedback Form</h2>
+        
+        <div class="form-group">
+            <img src="event-photo.jpg" 
+                 alt="Event Photo" 
+                 class="event-image"
+                 ondblclick="toggleImage(this)"
+                 title="Double-click to enlarge">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" 
+                   onblur="validatePhone(this)"
+                   placeholder="123-456-7890">
+            <span id="phoneError" class="error"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="eventType">Select Event:</label>
+            <select id="eventType" onchange="updateFee()">
+                <option value="">Choose an event</option>
+                <option value="50">Workshop ($50)</option>
+                <option value="100">Conference ($100)</option>
+                <option value="25">Seminar ($25)</option>
+            </select>
+            <div id="feeDisplay"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" 
+                      onkeyup="countChars(this)"
+                      rows="4" 
+                      maxlength="200"></textarea>
+            <div id="charCount">Characters remaining: 200</div>
+        </div>
+
+        <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+
+    <script>
+        function validatePhone(input) {
+            const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+            const errorElement = document.getElementById('phoneError');
+            if (!phonePattern.test(input.value)) {
+                errorElement.textContent = 'Please use format: 123-456-7890';
+            } else {
+                errorElement.textContent = '';
+            }
+        }
+
+        function updateFee() {
+            const select = document.getElementById('eventType');
+            const feeDisplay = document.getElementById('feeDisplay');
+            const fee = select.value;
+            feeDisplay.textContent = fee ? `Event fee: $${fee}` : '';
+        }
+
+        function toggleImage(img) {
+            img.classList.toggle('enlarged');
+        }
+
+        function countChars(textarea) {
+            const maxLength = textarea.maxLength;
+            const currentLength = textarea.value.length;
+            const remaining = maxLength - currentLength;
+            document.getElementById('charCount').textContent = 
+                `Characters remaining: ${remaining}`;
+        }
+
+        function submitFeedback() {
+            alert('Thank you for your feedback!');
+        }
+    </script>
+</body>
+</html>

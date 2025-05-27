@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Events</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        #locationStatus {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Events Near You</h2>
+        <button onclick="findNearbyEvents()">Find Nearby Events</button>
+        <div id="locationStatus"></div>
+    </div>
+
+    <script>
+        function findNearbyEvents() {
+            const status = document.getElementById('locationStatus');
+            
+            // Geolocation options
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            // Success handler
+            function success(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const accuracy = position.coords.accuracy;
+
+                status.className = 'success';
+                status.style.display = 'block';
+                status.innerHTML = `
+                    <h3>Location Found!</h3>
+                    <p>Latitude: ${latitude.toFixed(4)}</p>
+                    <p>Longitude: ${longitude.toFixed(4)}</p>
+                    <p>Accuracy: ${accuracy.toFixed(2)} meters</p>
+                    <p>Searching for events near you...</p>
+                `;
+            }
+
+            // Error handler
+            function error(err) {
+                status.className = 'error';
+                status.style.display = 'block';
+
+                switch(err.code) {
+                    case err.PERMISSION_DENIED:
+                        status.textContent = "Location access denied. Please enable location services.";
+                        break;
+                    case err.POSITION_UNAVAILABLE:
+                        status.textContent = "Location information unavailable.";
+                        break;
+                    case err.TIMEOUT:
+                        status.textContent = "Location request timed out.";
+                        break;
+                    default:
+                        status.textContent = "An unknown error occurred.";
+                }
+            }
+
+            // Check if geolocation is supported
+            if ("geolocation" in navigator) {
+                status.className = 'success';
+                status.style.display = 'block';
+                status.textContent = "Retrieving your location...";
+                navigator.geolocation.getCurrentPosition(success, error, options);
+            } else {
+                status.className = 'error';
+                status.style.display = 'block';
+                status.textContent = "Geolocation is not supported by your browser.";
+            }
+        }
+    </script>
+</body>
+</html>
